@@ -1,0 +1,46 @@
+{% extends 'base-backend.html.twig' %}
+
+{% block title %}Bracelet{% endblock %}
+
+{% block body %}
+    <a href="{{ path('app_admin_bracelet_index') }}">Retourn à la liste</a>
+    <h1  class="bg-dark text-white mt-3">Bracelet</h1>
+
+    <table class="table bg-dark text-white">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ bracelet.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ bracelet.title }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ bracelet.description }}</td>
+            </tr>
+            <tr>
+                <th>Tag</th>
+                <td>{{ bracelet.tag }}</td>
+            </tr>
+            <tr>
+                <th>UpdatedAt</th>
+                <td>{{ bracelet.updatedAt ? bracelet.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>ImageName</th>
+                <td>{{ bracelet.imageName }}</td>
+            </tr>
+            <tr>
+                <th>Slug</th>
+                <td>{{ bracelet.slug }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="d-flex justify-content-between align-items-center">
+    <a href="{{ path('app_admin_bracelet_edit', {'id': bracelet.id}) }}"class="btn btn-success"><i 
+    class="align-middle" data-feather="edit-2"></i></a>
+    {{ include('admin_bracelet/_delete_form.html.twig') }}
+{% endblock %}

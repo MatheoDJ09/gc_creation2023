@@ -1,0 +1,127 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Bracelets
+    
+{% endblock %}
+
+{% block body %}
+    <style>
+
+</style>
+
+    <h1 class=" text-white mt-4  fw-bolder fs-1 text-center">
+        Bracelets
+    </h1>
+    {#  {% for bague in bagues %} #}
+    {# CARDS BAGUES  #}
+    <div class="row row-cols-1 ms-2 row-cols-md-3 g-3 mt-3 text-white bg-dark mb-4 ">
+        <div class="col text-center">  {# TEXTE - BUTTON CENTRÉ #}
+            <div class="card dark bg-dark mb-3">  {# CARTE #1  Azul#}
+                <img src="{{ asset('images/bracelets/azul1.jpeg')}}" class="img-fluid"  alt="leopard">
+                    <div class="card-body">
+                        <h5 class="card-title ">
+                            Azul
+                        </h5>
+                    <button type="button" class="btn btn-outline-warning">Voir plus</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col text-center">  {# CARTE #2 Bleu #}
+                <div class="card card dark bg-dark mb-3">
+                    <img src="{{ asset('images/bracelets/bleu1.jpeg') }}" class="card-img-top" alt="tete-de-mort">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">
+                                Bleu
+                            </h5>
+                        <button type="button" class="btn btn-outline-warning">Voir plus</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col text-center">   {# CARTE #3 Esmeralda  #}
+                    <div class="card card dark bg-dark mb-3">
+                        <img src="{{ asset('images/bracelets/esmeralda1.jpeg') }}" class="card-img-top" alt="Jeanne">
+                            <div class="card-body">
+                                <h5 class="card-title text-center">
+                                    Esmeralda
+                                </h5>
+                            <button type="button" class="btn btn-outline-warning">Voir plus</button>
+                            </div>
+                        </div>
+                    </div>
+
+                        <div class="col text-center">   {# CARTE #4 Metal  #}
+                        <div class="card card dark bg-dark mb-3">
+                            <img src="{{ asset('images/bracelets/metal1.jpeg') }}" class="card-img-top" alt="Jeanne">
+                                <div class="card-body">
+                                    <h5 class="card-title text-center">
+                                        Metal
+                                    </h5>
+                                <button type="button" class="btn btn-outline-warning">Voir plus</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col text-center">   {# CARTE #5 Multicolor  #}
+                        <div class="card card dark bg-dark mb-3">
+                            <img src="{{ asset('images/bracelets/multi1.jpeg') }}" class="card-img-top" alt="Jeanne">
+                                <div class="card-body">
+                                    <h5 class="card-title text-center">
+                                        Multicolor
+                                    </h5>
+                                <button type="button" class="btn btn-outline-warning">Voir plus</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col text-center">   {# CARTE #6 Violet  #}
+                        <div class="card card dark bg-dark mb-3">
+                            <img src="{{ asset('images/bracelets/violet1.jpeg') }}" class="card-img-top" alt="Jeanne">
+                                <div class="card-body">
+                                    <h5 class="card-title text-center">
+                                        Violet
+                                    </h5>
+                                <button type="button" class="btn btn-outline-warning">Voir plus</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col text-center">   {# CARTE #7 JEANNE  #}
+                        <div class="card card dark bg-dark mb-3">
+                            <img src="{{ asset('images/bracelets/esmeralda1.jpeg') }}" class="card-img-top" alt="Jeanne">
+                                <div class="card-body">
+                                    <h5 class="card-title text-center">
+                                        Jeanne
+                                    </h5>
+                                <button type="button" class="btn btn-outline-warning">Voir plus</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col text-center">   {# CARTE #8 Esmeralda  #}
+                        <div class="card card dark bg-dark mb-3">
+                            <img src="{{ asset('images/bracelets/esmeralda1.jpeg') }}" class="card-img-top" alt="Jeanne">
+                                <div class="card-body">
+                                    <h5 class="card-title text-center">
+                                    Esmeralda 
+                                    </h5>
+                                <button type="button" class="btn btn-outline-warning">Voir plus</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col text-center">   {# CARTE #9 Esmeralda   #}
+                        <div class="card card dark bg-dark mb-3">
+                            <img src="{{ asset('images/bracelets/esmeralda1.jpeg') }}" class="card-img-top" alt="Jeanne">
+                                <div class="card-body">
+                                    <h5 class="card-title text-center">
+                                    Esmeralda 
+                                    </h5>
+                                <button type="button" class="btn btn-outline-warning">Voir plus</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {# {% endfor %} #}
+                {% endblock %}
+        

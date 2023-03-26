@@ -1,0 +1,46 @@
+{% extends 'base-backend.html.twig' %}
+
+{% block title %}Home index{% endblock %}
+
+{% block body %}
+    <div class="d-flex justify-content-between align-items-center">
+    <h1 class="bg-dark text-white mt-3">Accueil </h1>
+    <a href="{{ path('app_admin_home_new') }}"class="btn btn-success mt-3">Nouveau</a>
+    </div>
+    <table class="table bg-dark text-white">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>IsActive</th>
+                <th>Title</th>
+                {# <th>Text</th> #}
+                <th>UpdatedAt</th>
+                <th>Signature</th>
+                <th class="text-end">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for home in homes %}
+            <tr>
+                <td>{{ home.id }}</td>
+                <td>{{ home.isActive ? 'Yes' : 'No' }}</td>
+                <td>{{ home.title }}</td>
+                {# <td>{{ home.text }}</td> #}
+                <td>{{ home.updatedAt ? home.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ home.signature }}</td>
+                <td class="text-end">
+                    <a href="{{ path('app_admin_home_show', {'id': home.id}) }}"class="btn btn-light"><i 
+                class="align-middle" data-feather="eye"></i></a>
+                    <a href="{{ path('app_admin_home_edit', {'id': home.id}) }}"class="btn btn-success"><i 
+                class="align-middle" data-feather="edit-2"></i></a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">Aucune entrée trouvée</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

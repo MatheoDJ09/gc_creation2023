@@ -1,0 +1,11 @@
+{% extends 'base-backend.html.twig' %}
+
+{% block title %}Nouveau Collier{% endblock %}
+
+{% block body %}
+    <a href="{{ path('app_admin_collier_index') }}"class="btn btn-light fw-bold ">Retourn à la liste</a>
+    <div class="d-flex justify-content-between align-items-center">
+    <h1 class="bg-dark text-white mt-3 fw-bolder fs-1">Créer Un Nouveau Collier</h1>
+    </div>
+    {{ include('admin_collier/_form.html.twig') }}
+{% endblock %}

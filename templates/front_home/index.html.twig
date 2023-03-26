@@ -1,0 +1,93 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    
+{% endblock %}
+
+{% block body %}
+
+    <h1>
+        {{ contenu.title }}
+    </h1>
+    {% if carousels is not null %}
+        <div id="home-carousel" class="carousel slide" data-bs-ride="true">
+            <div class="carousel-indicators">
+                {% for carousel in carousels %}
+                    <button type="button" data-bs-target="#home-carousel" data-bs-slide-to="{{ loop.index0 }}" 
+                {% if loop.index0 == 0 %} class="active" {% endif %} aria-current="true" aria-label="Slide {{ loop.index }}"></button>
+                {% endfor %}
+            </div>
+            <div class="carousel-inner" data-bs-interval="5000" >
+                {% for carousel in carousels %}
+                    <div class="carousel-item {% if loop.index0 == 0 %} active {% endif %}">
+                        <img src="{{ asset('images/carousels/' ~  carousel.imageName ) }}" class="img-fluid width: 100% \9 " alt="images carousel">
+                            <div class="carousel-caption d-none ">
+                                {% if carousel.title is not null %}
+                                    <h5>
+                                        {{ carousel.title }}
+                                    </h5>
+                                {% endif %}
+                                {% if carousel.text is not null %}
+                                    <div>
+                                        {{ carousel.text|raw }}
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#home-carousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">
+                        Previous
+                    </span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#home-carousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">
+                        Next
+                    </span>
+                </button>
+            </div>
+        {% endif %}
+        <div>
+            {{ contenu.text|raw }}
+        </div>
+        {# CARDS IN FRONT WITH IMAGES #}
+        <div class="card-group row-cols-1 row-cols-md-3 card text-white bg-dark mb-3">
+                <div class="col">
+                    <div class="card dark bg-dark mb-3">
+                        <img src="/images/bracelets/red.jpg" class="card-img-top" alt="...">
+                            <div class="card-body text-center">
+                                <h5 class="card-title ">
+                                    Bracelet Rouge 
+                                </h5>
+                            <button type="button" class="btn btn-light">Voir plus</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card dark bg-dark mb-3 ">
+                            <img src="/images/bagues/tetedelion.jpg" class="space between" alt="...">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">
+                                    Bague Lion
+                                    </h5>
+                                <button type="button" class="btn btn-light">Voir plus</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card dark bg-dark mb-3 ">
+                                <img src="/images/bagues/tetedebird.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body text-center"> {#  Button Center #}
+                                        <h5 class="card-title ">
+                                        Bague Bird
+                                        </h5>
+                                    <button type="button" class="btn btn-light ">Voir plus</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endblock %}
+                    

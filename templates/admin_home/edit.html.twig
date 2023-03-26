@@ -1,0 +1,13 @@
+{% extends 'base-backend.html.twig' %}
+
+{% block title %}Edition Home{% endblock %}
+
+{% block body %}
+<a href="{{ path('app_admin_home_index') }}"class="btn btn-light fw-bold ">Retourn à la liste </a>
+    <div class="d-flex justify-content-between align-items-center">
+    <h1 class="bg-dark text-white mt-3">Edition Accueil</h1>
+    {{ include('admin_home/_delete_form.html.twig') }}
+    </div>
+        
+        {{ include('admin_home/_form.html.twig', {'button_label': 'Modifier'}) }}
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'base-backend.html.twig' %}
+
+{% block title %}Bague{% endblock %}
+
+{% block body %}
+    <a href="{{ path('app_admin_bague_index') }}">Retourn à la liste</a>
+    <h1 class="bg-dark text-white mt-3">Carousel</h1>
+
+    <table class="table bg-dark text-white">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ bague.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ bague.title }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ bague.description }}</td>
+            </tr>
+            <tr>
+                <th>Tag</th>
+                <td>{{ bague.tag }}</td>
+            </tr>
+            <tr>
+                <th>UpdatedAt</th>
+                <td>{{ bague.updatedAt ? bague.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>ImageName</th>
+                <td>{{ bague.imageName }}</td>
+            </tr>
+            <tr>
+                <th>Slug</th>
+                <td>{{ bague.slug }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="d-flex justify-content-between align-items-center">
+    <a href="{{ path('app_admin_carousel_edit', {'id': carousel.id}) }}"class="btn btn-success"><i 
+    class="align-middle" data-feather="edit-2"></i></a>
+    {{ include('admin_bague/_delete_form.html.twig') }}
+    </div>
+{% endblock %}

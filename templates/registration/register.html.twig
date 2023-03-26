@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+    {% for flash_error in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+    {% endfor %}
+
+<h1 class="text-white h1 mb-3 mt-5 font-weight-normal text-center ms-auto">Inscrivez-vous!</h1>
+
+        {{ form_start(registrationForm) }}
+
+            {#  NOM  #}
+            <div class="text-white container-fluid col col-md-3 mt-3 font-weight-normal h3">
+            {{ form_row(registrationForm.name)}}
+            </div>
+
+            {# PRENOM  #}
+            <div class="text-white container-fluid col col-md-3 mt-3 font-weight-normal h3">
+            {{ form_row(registrationForm.firstname)}}
+            </div>
+
+            {# Email #}
+
+        <div class="text-white container-fluid col col-md-3 mt-3 font-weight-normal h3">
+        {{ form_row(registrationForm.email)}}
+        </div>
+
+            {# Password #}
+        <div class="text-white container-fluid col col-md-3 mt-3 font-weight-normal h3">
+        {{ form_row(registrationForm.plainPassword, {
+            label: 'Password'
+        }) }}
+
+            {# agree terms #}
+        <div class="text-white container-fluid mt-5 font-weight-normal h5">
+        {{ form_row(registrationForm.agreeTerms) }}
+        </div>
+
+                {# Button Confirmer #}
+    <div class="text-center h3">
+    <button class="btn btn-outline-warning btn-lg mt-4" data-feather="arrow-right" type="submit">Confirmer ! </button>
+</div>
+    {{ form_end(registrationForm) }}
+{% endblock %}

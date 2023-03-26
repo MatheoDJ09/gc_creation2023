@@ -1,0 +1,50 @@
+{% extends 'base-backend.html.twig' %}
+
+{% block title %}Pochette index{% endblock %}
+
+{% block body %}
+    <div class="d-flex justify-content-between align-items-center">
+    <h1 class="bg-dark text-white mt-3 fw-bolder fs-1">Pochette index</h1>
+    <a href="{{ path('app_admin_pochette_new') }}"class="btn btn-success mt-3">Nouveau</a>
+    </div>
+        <table class="table bg-dark text-white">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Tag</th>
+                <th>ImageName</th>
+                <th>Slug</th>
+                <th class="text-end">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for pochette in pochettes %}
+            <tr>
+                <td>{{ pochette.id }}</td>
+                <td>{{ pochette.title }}</td>
+                <td>{{ pochette.description }}</td>
+                <td>{{ pochette.tag }}</td>
+                <td>  {# ACTIVATION DE LIGHTBOX AVEC HTML  #}
+                        <a href="{{ asset('images/pochettes/' ~ pochette.imageName )}}" data-lightbox="{{ pochette.imageName}}">
+                        <img src="{{ asset('images/pochettes/' ~ pochette.imageName )}}" class="img-list" 
+                        alt="{{ pochette.imageName }}">
+                </td>
+                <td>{{ pochette.slug }}</td>
+                <td class="text-end">  {# Bascule les icons show/edit à la fin  #}
+                        <a href="{{ path('app_admin_pochette_show', {'id': pochette.id}) }}"class="btn btn-light"><i 
+                        class="align-middle" data-feather="eye"></i></a>
+                        <a href="{{ path('app_admin_pochette_edit', {'id': pochette.id}) }}"class="btn btn-success"><i 
+                        class="align-middle" data-feather="edit-2"></i></a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">Aucune entrée trouvée</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

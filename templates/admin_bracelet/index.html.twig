@@ -1,0 +1,52 @@
+{% extends 'base-backend.html.twig' %}
+
+{% block title %}Bracelet index{% endblock %}
+
+{% block body %}
+    <div class="d-flex justify-content-between align-items-center">
+    <h1 class="bg-dark text-white mt-3 fw-bolder fs-1">Bracelet images</h1>
+    <a href="{{ path('app_admin_bracelet_new') }}"class="btn btn-success mt-3">Nouveau</a>
+    </div>
+    <table class="table bg-dark text-white">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Tag</th>
+                <th>UpdatedAt</th>
+                <th>ImageName</th>
+                <th>Slug</th>
+                <th class="text-end">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for bracelet in bracelets %}
+            <tr>
+                <td>{{ bracelet.id }}</td>
+                <td>{{ bracelet.title }}</td>
+                <td>{{ bracelet.description }}</td>
+                <td>{{ bracelet.tag }}</td>
+                <td>{{ bracelet.updatedAt ? bracelet.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>  {# ACTIVATION DE LIGHTBOX AVEC HTML  #}
+                        <a href="{{ asset('images/bracelets/' ~ bracelet.imageName )}}" data-lightbox="{{ bracelet.imageName}}">
+                        <img src="{{ asset('images/bracelets/' ~ bracelet.imageName )}}" class="img-list" 
+                        alt="{{ bracelet.imageName }}">
+                </td>
+                <td>{{ bracelet.slug }}</td>
+                <td class="text-end">  {# Bascule les icons show/edit à la fin  #}
+                        <a href="{{ path('app_admin_bracelet_show', {'id': bracelet.id}) }}"class="btn btn-light"><i 
+                        class="align-middle" data-feather="eye"></i></a>
+                        <a href="{{ path('app_admin_bracelet_edit', {'id': bracelet.id}) }}"class="btn btn-success"><i 
+                        class="align-middle" data-feather="edit-2"></i></a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">Aucune entrée trouvée</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

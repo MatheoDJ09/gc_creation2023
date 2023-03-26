@@ -1,0 +1,27 @@
+vich_uploader:
+        db_driver: orm
+        mappings:
+                carousels:
+                        uri_prefix: /images/carousels
+                        upload_destination: "%kernel.project_dir%/public/images/carousels"
+                        namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+                bagues:
+                        uri_prefix: /images/bagues
+                        upload_destination: "%kernel.project_dir%/public/images/bagues"
+                        namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+                bracelets:
+                        uri_prefix: /images/bracelets
+                        upload_destination: "%kernel.project_dir%/public/images/bracelets"
+                        namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+                colliers:
+                        uri_prefix: /images/colliers
+                        upload_destination: "%kernel.project_dir%/public/images/colliers"
+                        namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+                pochettes:
+                        uri_prefix: /images/pochettes
+                        upload_destination: "%kernel.project_dir%/public/images/pochettes"
+                        namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+                avatars:
+                        uri_prefix: /images/pochettes
+                        upload_destination: "%kernel.project_dir%/public/images/avatars"
+                        namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
