@@ -15,7 +15,7 @@ class CollierFixtures extends Fixture
         $collier->setTitle('bleu');
         $collier->setDescription('');
         $collier->setImageName('bleu1.jpeg');
-        $collier->setPrix('');
+        $collier->setPrix('75.00');
         $collier->setSlug('');
         $manager->persist($collier);
 
@@ -24,7 +24,7 @@ class CollierFixtures extends Fixture
         $collier->setTitle('OR');
         $collier->setDescription('');
         $collier->setImageName('collier1.jpeg');
-        $collier->setPrix('');
+        $collier->setPrix('75.00');
         $collier->setSlug('');
         $manager->persist($collier);
 
@@ -33,7 +33,7 @@ class CollierFixtures extends Fixture
         $collier->setTitle('Croix');
         $collier->setDescription('');
         $collier->setImageName('cruz1.jpeg');
-        $collier->setPrix('');
+        $collier->setPrix('75.00');
         $collier->setSlug('');
         $manager->persist($collier);
 
@@ -42,7 +42,7 @@ class CollierFixtures extends Fixture
         $collier->setTitle('Lion');
         $collier->setDescription('');
         $collier->setImageName('leon1.jpeg');
-        $collier->setPrix('');
+        $collier->setPrix('75.00');
         $collier->setSlug('');
         $manager->persist($collier);
 
@@ -51,7 +51,7 @@ class CollierFixtures extends Fixture
         $collier->setTitle('Perle');
         $collier->setDescription('');
         $collier->setImageName('perle1.jpeg');
-        $collier->setPrix('');
+        $collier->setPrix('75.00');
         $collier->setSlug('');
         $manager->persist($collier);
 
@@ -60,7 +60,7 @@ class CollierFixtures extends Fixture
         $collier->setTitle('Dia De Muertos');
         $collier->setDescription('');
         $collier->setImageName('tete1.jpeg');
-        $collier->setPrix('');
+        $collier->setPrix('75.00');
         $collier->setSlug('');
         $manager->persist($collier);
 

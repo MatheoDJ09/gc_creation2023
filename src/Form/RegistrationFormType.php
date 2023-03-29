@@ -38,7 +38,7 @@ class RegistrationFormType extends AbstractType
                     ]
                 ])
             ->add('agreeTerms', CheckboxType::class, [
-                "label" =>"Acceptez les termes",
+                "label" =>"J'accepte les conditions générales et la politique de confidentialité.",
                 'mapped' => false,
                 'constraints' => [
                     new IsTrue([

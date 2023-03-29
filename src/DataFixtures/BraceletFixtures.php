@@ -15,7 +15,7 @@ class BraceletFixtures extends Fixture
         $bracelet->setTitle('azul');
         $bracelet->setDescription('');
         $bracelet->setImageName('azul1.jpeg');
-        $bracelet->setPrix('');
+        $bracelet->setPrix('100.00');
         $bracelet->setSlug('');
         $manager->persist($bracelet);
         
@@ -24,7 +24,7 @@ class BraceletFixtures extends Fixture
         $bracelet->setTitle('Bleu');
         $bracelet->setDescription('');
         $bracelet->setImageName('bleu1.jpeg');
-        $bracelet->setPrix('');
+        $bracelet->setPrix('100.00');
         $bracelet->setSlug('');
         $manager->persist($bracelet);
 
@@ -33,7 +33,7 @@ class BraceletFixtures extends Fixture
         $bracelet->setTitle('Esmeralda');
         $bracelet->setDescription('');
         $bracelet->setImageName('esmeralda1.jpeg');
-        $bracelet->setPrix('');
+        $bracelet->setPrix('100.00');
         $bracelet->setSlug('');
         $manager->persist($bracelet);
 
@@ -42,7 +42,7 @@ class BraceletFixtures extends Fixture
         $bracelet->setTitle('metal');
         $bracelet->setDescription('');
         $bracelet->setImageName('metal1.jpeg');
-        $bracelet->setPrix('');
+        $bracelet->setPrix('100.00');
         $bracelet->setSlug('');
         $manager->persist($bracelet);
 
@@ -51,7 +51,7 @@ class BraceletFixtures extends Fixture
         $bracelet->setTitle('metal');
         $bracelet->setDescription('');
         $bracelet->setImageName('metal1.jpeg');
-        $bracelet->setPrix('');
+        $bracelet->setPrix('100.00');
         $bracelet->setSlug('');
         $manager->persist($bracelet);
 
@@ -60,7 +60,7 @@ class BraceletFixtures extends Fixture
         $bracelet->setTitle('Multicolor');
         $bracelet->setDescription('');
         $bracelet->setImageName('multi1.jpeg');
-        $bracelet->setPrix('');
+        $bracelet->setPrix('100.00');
         $bracelet->setSlug('');
         $manager->persist($bracelet);
 
@@ -69,7 +69,7 @@ class BraceletFixtures extends Fixture
         $bracelet->setTitle('violet');
         $bracelet->setDescription('');
         $bracelet->setImageName('violet1.jpeg');
-        $bracelet->setPrix('');
+        $bracelet->setPrix('100.00');
         $bracelet->setSlug('');
         $manager->persist($bracelet);
 

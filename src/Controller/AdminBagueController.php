@@ -5,10 +5,11 @@ namespace App\Controller;
 use App\Entity\Bague;
 use App\Form\BagueType;
 use App\Repository\BagueRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\String\Slugger\SluggerInterface;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 #[Route('/admin/bague')]
 class AdminBagueController extends AbstractController
@@ -22,13 +23,14 @@ class AdminBagueController extends AbstractController
     }
 
     #[Route('/new', name: 'app_admin_bague_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, BagueRepository $bagueRepository): Response
+    public function new(Request $request, BagueRepository $bagueRepository, SluggerInterface $sluggerInterface): Response
     {
         $bague = new Bague();
         $form = $this->createForm(BagueType::class, $bague);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $bague->setSlug($sluggerInterface->slug(\strtolower($bague->getTitle())));
             $bagueRepository->save($bague, true);
 
             return $this->redirectToRoute('app_admin_bague_index', [], Response::HTTP_SEE_OTHER);
@@ -75,4 +77,4 @@ class AdminBagueController extends AbstractController
 
         return $this->redirectToRoute('app_admin_bague_index', [], Response::HTTP_SEE_OTHER);
     }
-}
+}  

@@ -39,6 +39,7 @@ class BagueType extends AbstractType
                 'colliers'=>'colliers',
                 'pochettes'=>'pochettes',
                 ]]);
+                
     }
 
     public function configureOptions(OptionsResolver $resolver): void

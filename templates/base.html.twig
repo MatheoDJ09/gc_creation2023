@@ -91,7 +91,7 @@
                 </div>
             </div>
         </nav>
-        {# Boucle for pour avoir flash messages  #}
+        {# Boucle for pour avoir flash messages pop up  #}
         <main>
                 {% for label, messages in app.flashes %}
                 {% for message in messages %}
@@ -102,9 +102,132 @@
                 {% endfor %}
             {% endfor %}
             {% block body %}
-            {% endblock %}
-        </main>
-        <!-- JavaScript Bundle with Popper -->
+        {% endblock %}
+        </main>  
+        <!-- FOOTER -->
+        <!-- SHAPE -->
+        <div class="position-relative">
+            <div class="shape shape-bottom shape-fluid-x svg-shim text-dark">
+                <svg viewbox=" 0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 48h2880V0h-720C1442.5 52 720 0 720 0H0v48z" fill="currentColor"></path>
+            </div>
+
+<!-- FOOTER -->
+<footer class="py-8 py-md-11 bg-dark text-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-6 col-md-4 col-lg-3">
+
+                <!-- BRAND -->
+                <a class="navbar-brand" href="{{ path('app_front_home')}}" >
+                <img src="/public/images/logo.png" alt="logo" class="footer-brand img-fluid mb-2">
+                    <!-- TEXT -->
+                    <P class="text-white-700 mb-2">
+                    Copyright &copy; 2023 GC Creation. 
+                    
+                    </P>
+                    <!-- SOCIAL -->
+                    <ul class="list-unstyled list-inline list-social mb-6 mb-md-0">
+                        <li class="list-inline-item list-social-item me-3">
+                            <a href="https://www.instagram.com/gc_creation/?hl=fr" class="list-inline-item list-social-item me-3">
+                            <img src="/public/images/social/instagram.png" class="list-social-icon">
+                            </a>
+                        </li>
+                        <li class="list-inline-item list-social-item me-3">
+                            <a href="https://www.facebook.com/gccreationparis/?locale=fr_FR" class="list-inline-item list-social-item me-3">
+                            <img src="/public/images/social/facebook.png" class="list-social-icon">
+                            </a>
+                        </li>
+                    </ul>
+                    </div>
+<div class="col-3 col-md-4 col-lg-2">
+    <!-- HEADING      VOTRE COMPTE -->
+    <h5 class=".fs-5 text fw-bold text-uppercase">
+        Votre Compte
+    </h5>
+    <ul class="list-unstyled text-muted mb-6 mb-md-8 mb-lg-0">
+        <li class="mb-3 ">
+            {# Inscrivez-vous! #}
+            <a href="{{ path('app_register') }}" class="text-reset">
+                Inscrivez-vous!
+            </a>
+        </li>
+        <li class="mb-3">
+            <a href="{{ path('app_login') }}" class="text-reset">
+                Connexion
+            </a>
+        </li>
+    </div>
+    {# QUI SOMMES-NOUS #}
+    <div class="col-6 col-md-4 col-lg-2">
+        <!-- HEADING   QUI SOMMES NOUS -->
+        <h5 class=".fs-5 text fw-bold text-uppercase text-gray-700">
+            QUI SOMMES-NOUS
+        </h5>
+        {# ABOUT US #}
+        <ul class="list-unstyled text-muted mb-6 mb-md-8 mb-lg-0">
+            <li class="mb-3 ">
+                <a href="#" class="text-reset">
+                    About Us
+                </a>
+            </li>
+            {# INFORMATIONS UTILES #}
+            <li class="mb-3 ">
+                <a href="#" class="text-reset">
+                    Informations Utiles
+                </a>
+            </li>
+            {# BOUTIQUE #}
+            <li class="mb-3 ">
+                <a href="#" class="text-reset">
+                    Boutique
+                </a>
+            </li>
+        </ul>
+        </div>
+    {# HOME- CONTACTEZ-NOUS #}
+    <div class="col-6 col-md-4 col-lg-2">
+        <!-- HEADING   HOME -->
+        <h5 class=".fs-5 text fw-bold text-uppercase text-gray-700">
+            HOME
+        </h5>
+        {# CONTACTEZ-NOUS #}
+        <ul class="list-unstyled text-muted mb-6 mb-md-8 mb-lg-0">
+            <li class="mb-3 ">
+                <a href="#" class="text-reset">
+                Contactez-Nous
+                </a>
+            </li>
+        </ul>
+
+
+
+
+
+</div></div></div></footer>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        {#    <footer class="main_footer ptb_3 text-white">
+        <div class="footer_content container text_center">
+        <p>Copyright &copy; 2023 GC Creation. Tous droits réservés. 
+            <span class="contact_footer">Email: 
+        <a href="mailto: gccreation@hotmail.com">gccreation@hotmail.com</a> Tel: 
+    <a href="tel:+330144610950">+330144610950</a> </span></p>  #}
+{#     </div>
+</footer> #}
+
+
+</div> {# PAS TOUCHE #}
+    <!-- JavaScript Bundle with Popper -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" 
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
         {% block javascripts %}

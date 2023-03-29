@@ -16,11 +16,12 @@ class FrontProfilController extends AbstractController
     #[Route('/profil', name: 'app_front_profil')]
     public function index(Request $request, EntityManagerInterface $em, UserPasswordHasherInterface $userPasswordHasherInterface ): Response
     {
-        //On récupère l'utilisateur connecté
-        $user = $this->getUser();
-        $form = $this->createForm(UserType::class, $user);
-        //On hydrate le formulaire avec les données de la requête
-        $form->handleRequest($request);
+    // On récupère l'utilisateur connecté
+    $user = $this->getUser();
+    // On crée une instance du formulaire en utilisant la classe UserType
+    $form = $this->createForm(UserType::class, $user);
+    // On hydrate le formulaire avec les données de la requête
+    $form->handleRequest($request);
         //Si le formulaire est soumis et valide 
         if ($form->isSubmitted() && $form->isValid()){
         //On traite le plainPassword si necessaire 

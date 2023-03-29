@@ -156,12 +156,12 @@ class Collier
         return $this;
     }
 
-    public function getPrix(): ?string
+    public function getPrix(): ?int
     {
         return $this->prix;
     }
 
-    public function setPrix(string $prix): self
+    public function setPrix(int $prix): self
     {
         $this->prix = $prix;
 
