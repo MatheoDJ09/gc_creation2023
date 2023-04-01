@@ -70,8 +70,9 @@
                     {% if is_granted("ROLE_USER") %}
                     <div class="d-flex align-items-center">
                         <div class="text-white">Bienvenue {{ app.user.email }}</div>
+                        {# ROLE ADMIN  #}
                         {% if is_granted("ROLE_ADMIN") %}
-                        <a class="nav-link me-1" href="#" target="_blank">Admin</a>
+                        <a class="nav-link me-1" href="#" target="_blank">ADMIN</a>
                         {% endif %}
                         {# MON COMPTE ET DECONNEXION #}
                     <a class="btn btn-outline-warning me-1" href="{{ path('app_front_profil')}}">Mon Compte</a>
@@ -224,7 +225,6 @@
     <a href="tel:+330144610950">+330144610950</a> </span></p>  #}
 {#     </div>
 </footer> #}
-
 
 </div> {# PAS TOUCHE #}
     <!-- JavaScript Bundle with Popper -->
