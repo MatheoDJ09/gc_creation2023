@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter au panier{% endblock %}
+
+{% block body %}
+    <h1>Ajouter au panier</h1>
+
+    <div class="product">
+        <img src="{{ product.image }}" alt="{{ product.title }}" />
+        <h2>{{ product.title }}</h2>
+        <p>{{ product.description }}</p>
+        <form method="post">
+            <label for="quantity">Quantité :</label>
+            <input type="number" name="quantity" id="quantity" value="1" />
+            <hr />
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            {{ form_end(form) }}
+            <hr />
+            <button type="submit">Ajouter au panier</button>
+        </form>
+    </div>
+{% endblock %}

@@ -49,7 +49,7 @@ class RegistrationController extends AbstractController
             $this->emailVerifier->sendEmailConfirmation('app_verify_email', $user,
                 (new TemplatedEmail())
                     ->from(new Address('inscription@gccreation.com', 'gc creation'))
-                    ->to($user->getEmail())
+                    ->to($user->getEmail('admin@admin.com'))
                     ->subject('Merci de validé votre inscription Chez GC Creation')
                     ->htmlTemplate('registration/confirmation_email.html.twig')
             );

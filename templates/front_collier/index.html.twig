@@ -10,115 +10,21 @@
 <h1 class="text-white mt-4  fw-bolder fs-1 text-center">
 Colliers
 </h1>
-{#  {% for bague in bagues %} #}
 {# CARDS COLLIERS  #}
-<div class="row row-cols-1 ms-2 row-cols-md-3 g-3 mt-3 text-white bg-dark mb-4 ">
-<div class="col text-center">  {# TEXTE - BUTTON CENTRÉ #}
-    <div class="card dark bg-dark mb-3">  {# CARTE #1  bleu1#}
-        <img src="{{ asset('images/colliers/bleu1.jpeg')}}" class="img-fluid"  alt="leopard">
+<div class="d-flex flex-wrap justify-content-center text-white">
+{% for collier in colliers %} 
+<div class="d-flex col-12 col-sm-12 col-md-6 col-lg-3 text-white m-2">  {# TEXTE - BUTTON CENTRÉ #}
+    <div class="card dark text-center bg-dark mb-3">  {# CARTE #1  bleu1#}
+        <img src="{{ asset('images/colliers/' ~ collier.imageName)}}" class="img-fluid"  alt="leopard">
             <div class="card-body">
                 <h5 class="card-title ">
-                    Bleu
+                {{collier.title}}
                 </h5>
             <button type="button" class="btn btn-outline-warning">Voir plus</button>
-            </div>
         </div>
     </div>
-    <div class="col text-center">  {# CARTE #2 OR #}
-        <div class="card card dark bg-dark mb-3">
-            <img src="{{ asset('images/colliers/collier1.jpeg') }}" class="card-img-top" alt="tete-de-mort">
-                <div class="card-body">
-                    <h5 class="card-title text-center">
-                        O'r
-                    </h5>
-                <button type="button" class="btn btn-outline-warning">Voir plus</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="col text-center">   {# CARTE #3 Croix #}
-            <div class="card card dark bg-dark mb-3">
-                <img src="{{ asset('images/colliers/cruz1.jpeg') }}" class="card-img-top" alt="Jeanne">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">
-                            Croix
-                        </h5>
-                    <button type="button" class="btn btn-outline-warning">Voir plus</button>
-                    </div>
-                </div>
-            </div>
-
-                <div class="col text-center">   {# CARTE #4 LION #}
-                <div class="card card dark bg-dark mb-3">
-                    <img src="{{ asset('images/colliers/leon1.jpeg') }}" class="card-img-top" alt="Jeanne">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">
-                                Lion
-                            </h5>
-                        <button type="button" class="btn btn-outline-warning">Voir plus</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col text-center">   {# CARTE #5 PERLES  #}
-                <div class="card card dark bg-dark mb-3">
-                    <img src="{{ asset('images/colliers/perle1.jpeg') }}" class="card-img-top" alt="Jeanne">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">
-                                Perle
-                            </h5>
-                        <button type="button" class="btn btn-outline-warning">Voir plus</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col text-center">   {# CARTE #6 Dia de Muertos  #}
-                <div class="card card dark bg-dark mb-3">
-                    <img src="{{ asset('images/colliers/tete1.jpeg') }}" class="card-img-top" alt="Jeanne">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">
-                                Dia de Muertos
-                            </h5>
-                        <button type="button" class="btn btn-outline-warning">Voir plus</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col text-center">   {# CARTE #7 JEANNE  #}
-                <div class="card card dark bg-dark mb-3">
-                    <img src="{{ asset('images/colliers/cruz2.jpeg') }}" class="card-img-top" alt="Jeanne">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">
-                                Jeanne
-                            </h5>
-                        <button type="button" class="btn btn-outline-warning">Voir plus</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col text-center">   {# CARTE #8 Esmeralda  #}
-                <div class="card card dark bg-dark mb-3">
-                    <img src="{{ asset('images/colliers/bleu1.jpeg') }}" class="card-img-top" alt="Jeanne">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">
-                            Esmeralda 
-                            </h5>
-                        <button type="button" class="btn btn-outline-warning">Voir plus</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col text-center">   {# CARTE #9 Esmeralda   #}
-                <div class="card card dark bg-dark mb-3">
-                    <img src="{{ asset('images/colliers/cruz1.jpeg') }}" class="card-img-top" alt="Jeanne">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">
-                            Esmeralda 
-                            </h5>
-                        <button type="button" class="btn btn-outline-warning">Voir plus</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        {# {% endfor %} #}
+</div>
+        {% endfor %} 
+    </div>
         {% endblock %}
 

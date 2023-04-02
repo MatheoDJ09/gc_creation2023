@@ -64,14 +64,7 @@ class BraceletFixtures extends Fixture
         $bracelet->setSlug('');
         $manager->persist($bracelet);
 
-        $bracelet = new Bracelet();
-        $bracelet->setTag('bracelet');
-        $bracelet->setTitle('violet');
-        $bracelet->setDescription('');
-        $bracelet->setImageName('violet1.jpeg');
-        $bracelet->setPrix('100.00');
-        $bracelet->setSlug('');
-        $manager->persist($bracelet);
+
 
         
 

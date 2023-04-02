@@ -32,12 +32,16 @@ class AdminBagueController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $bague->setSlug($sluggerInterface->slug(\strtolower($bague->getTitle())));
             $bagueRepository->save($bague, true);
-
+            //--------------------------//
+            $bagues = ['bague 1', 'bague 2', 'bague 3'];
+            return $this->render('//templates/front_bague/index.html.twig', ['bagues' => $bagues]);
+            //--------------------------//
+            
             return $this->redirectToRoute('app_admin_bague_index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('admin_bague/new.html.twig', [
-            'bague' => $bague,
+            'bague' => $bagues,
             'form' => $form,
         ]);
     }
@@ -46,7 +50,7 @@ class AdminBagueController extends AbstractController
     public function show(Bague $bague): Response
     {
         return $this->render('admin_bague/show.html.twig', [
-            'bague' => $bague,
+            'bague' => $bagues,
         ]);
     }
 
@@ -63,7 +67,7 @@ class AdminBagueController extends AbstractController
         }
 
         return $this->renderForm('admin_bague/edit.html.twig', [
-            'bague' => $bague,
+            'bague' => $bagues,
             'form' => $form,
         ]);
     }
@@ -78,3 +82,7 @@ class AdminBagueController extends AbstractController
         return $this->redirectToRoute('app_admin_bague_index', [], Response::HTTP_SEE_OTHER);
     }
 }  
+
+// ====================================================== //
+// ====================================================== //
+// ====================================================== //

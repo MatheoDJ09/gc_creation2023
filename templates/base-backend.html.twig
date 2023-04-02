@@ -88,16 +88,9 @@
                                 </span>
                             </a>
                         </li>
-                        <li class="sidebar-item bg-dark text-white">
-                            <a class="sidebar-link" href="{{ path('app_admin_pochette_index')}}">
-                                <i class="align-middle" data-feather="mail"></i>
-                                <span class="align-middle">
-                                    Pochettes
-                                </span>
-                            </a>
-                        </li>
-    
-                        <li class="sidebar-item bg-dark text-white">
+
+                        {# AJOUTER PLUS DE PRODUITS #}
+{#                         <li class="sidebar-item bg-dark text-white">
                             <a class="sidebar-link" href="charts-chartjs.html">
                                 <i class="align-middle" data-feather="bar-chart-2"></i>
                                 <span class="align-middle">
@@ -113,10 +106,10 @@
                                 </span>
                             </a>
                         </li>
-                    </ul>
-
+                    </ul> #}
+                    {# CHANGEMENT DE COULEUR AU MILLIEU  #}
             </nav>
-            <div class="main bg-dark text-white">  {# CHANGEMENT DE COULEUR AU MILLIEU  #}
+            <div class="main bg-dark text-white">  
                 <nav class="navbar navbar-expand navbar-light navbar-bg">
                     <a class="sidebar-toggle js-sidebar-toggle">
                         <i class="hamburger align-self-center"></i>
@@ -267,7 +260,7 @@
                                         <a href="#" class="list-group-item">
                                             <div class="row g-0 align-items-center">
                                                 <div class="col-2">
-                                                    <img src="img/avatars/avatar-2.jpg" class="avatar img-fluid rounded-circle" alt="William Harris">
+                                                    <img src="img/avatars/avatar.ironman.png" class="avatar img-fluid rounded-circle" alt="William Harris">
                                                 </div>
                                                 <div class="col-10 ps-2">
                                                     <div class="text-dark">
@@ -366,14 +359,9 @@
                                     </a>
                                     <a class="dropdown-item" href="#">
                                         <i class="align-middle me-1" data-feather="help-circle"></i>
-                                        Help Center
-                                                                            
-                                    </a>
+                                        Help Center</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">
-                                        Log out
-                                                                            
-                                    </a>
+                                    <a class="dropdown-item" href="#">Log out</a>
                                 </div>
                             </li>
                         </ul>
@@ -391,8 +379,9 @@
                     <div class="content">
                     {% block body %}{% endblock %}
                     </div>
-                    
-                <footer class="footer bg-dark text-white"> {# CHANGEMENT COLOR ADMINKIT FOOTER  #}
+
+                {# CHANGEMENT COLOR ADMINKIT FOOTER  #}
+                <footer class="footer bg-dark text-white"> 
                     <div class="container-fluid">
                         <div class="row text-muted">
                             <div class="col-6 text-start">

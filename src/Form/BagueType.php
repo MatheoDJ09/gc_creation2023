@@ -37,7 +37,7 @@ class BagueType extends AbstractType
                 'bagues'=>'bagues',
                 'bracelets'=>'bracelets',
                 'colliers'=>'colliers',
-                'pochettes'=>'pochettes',
+
                 ]]);
                 
     }

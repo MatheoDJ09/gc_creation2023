@@ -17,11 +17,7 @@ vich_uploader:
                         uri_prefix: /images/colliers
                         upload_destination: "%kernel.project_dir%/public/images/colliers"
                         namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
-                pochettes:
-                        uri_prefix: /images/pochettes
-                        upload_destination: "%kernel.project_dir%/public/images/pochettes"
-                        namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
                 avatars:
-                        uri_prefix: /images/pochettes
+                        uri_prefix: /images/avatars
                         upload_destination: "%kernel.project_dir%/public/images/avatars"
                         namer: Vich\UploaderBundle\Naming\SmartUniqueNamer

@@ -34,7 +34,7 @@
                         alt="{{ bracelet.imageName }}">
                 </td>
                 <td>{{ bracelet.slug }}</td>
-                <td class="text-end">  {# Bascule les icons show/edit à la fin  #}
+                <td class="text-end">  {# Bascule les icons show/edit à la fin avec la route de show et edit #}
                         <a href="{{ path('app_admin_bracelet_show', {'id': bracelet.id}) }}"class="btn btn-light"><i 
                         class="align-middle" data-feather="eye"></i></a>
                         <a href="{{ path('app_admin_bracelet_edit', {'id': bracelet.id}) }}"class="btn btn-success"><i 
