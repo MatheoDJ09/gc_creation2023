@@ -31,6 +31,10 @@ class AdminUserController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $userRepository->save($user, true);
 
+            /* FLASH MESSAGE */
+// ====================================================== //
+$this->addFlash('success', 'Votre Bague a été Sauvergarder !');
+// ====================================================== //
             return $this->redirectToRoute('app_admin_user_index', [], Response::HTTP_SEE_OTHER);
         }
 
@@ -57,6 +61,10 @@ class AdminUserController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $userRepository->save($user, true);
 
+            /* FLASH MESSAGE */
+// ====================================================== //
+$this->addFlash('success', 'Votre Bague a été Modifier !');
+// ====================================================== //
             return $this->redirectToRoute('app_admin_user_index', [], Response::HTTP_SEE_OTHER);
         }
 
@@ -72,7 +80,10 @@ class AdminUserController extends AbstractController
         if ($this->isCsrfTokenValid('delete'.$user->getId(), $request->request->get('_token'))) {
             $userRepository->remove($user, true);
         }
-
+            /* FLASH MESSAGE */
+// ====================================================== //
+$this->addFlash('success', 'Votre Bague a été supprimer !');
+// ====================================================== //
         return $this->redirectToRoute('app_admin_user_index', [], Response::HTTP_SEE_OTHER);
     }
 }

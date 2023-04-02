@@ -31,6 +31,11 @@ class AdminBraceletController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $braceletRepository->save($bracelet, true);
 
+            /* FLASH MESSAGE */
+// ====================================================== //
+$this->addFlash('success', 'Votre Bague a été Sauvergarder !');
+// ====================================================== //
+
             return $this->redirectToRoute('app_admin_bracelet_index', [], Response::HTTP_SEE_OTHER);
         }
 
@@ -56,7 +61,10 @@ class AdminBraceletController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $braceletRepository->save($bracelet, true);
-
+            /* FLASH MESSAGE */
+// ====================================================== //
+$this->addFlash('success', 'Votre Bague a été Modifier !');
+// ====================================================== //
             return $this->redirectToRoute('app_admin_bracelet_index', [], Response::HTTP_SEE_OTHER);
         }
 
@@ -73,6 +81,10 @@ class AdminBraceletController extends AbstractController
             $braceletRepository->remove($bracelet, true);
         }
 
+            /* FLASH MESSAGE */
+// ====================================================== //
+$this->addFlash('success', 'Votre Bague a été supprimer !');
+// ====================================================== //
         return $this->redirectToRoute('app_admin_bracelet_index', [], Response::HTTP_SEE_OTHER);
     }
 }

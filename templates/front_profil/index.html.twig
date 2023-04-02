@@ -16,7 +16,6 @@
         </li>
     </ul>
 
-
     <div class="tab-content text-white dark bg-dark mb-3" id="myTabContent">
     {# pane 1 #}
     <div class="tab-pane fade text white show active" id="home-tab-pane" role="tabpanel" 
@@ -28,54 +27,39 @@
     <div class="row row-cols-2 ms-5  col-12 col-md-4">
     {{ form_row(form.sexe)}} 
     </div>
-
         {#  NOM - PRENOM  #}
-
     <div class="row row-cols-2 ms-5 col-12 col-md-10">
     {{ form_row(form.name)}}
     {{ form_row(form.firstname)}}
     </div>
-
         {# ADRESSE - COMPLEMENT #}
-
     <div class="row row-cols-2 ms-5 col-12 col-md-10">
     {{ form_row(form.address)}}
     {{ form_row(form.address2)}}
     </div>
-
     {# VILLE - CODE POSTAL #}
-
     <div class="row row-cols-2 ms-5 col-12 col-md-10">
     {{ form_row(form.city)}}
     {{ form_row(form.zipCode)}}
     </div>
-    
     {# PAYS - NUMERO DE TELEPHONE #}
-
     <div class="row row-cols-2 ms-5 col-12 col-md-10">
     {{ form_row(form.country)}}
     {{ form_row(form.phoneNumber)}}
     </div>
-
-    {# Email #}
-
+    {# Email et avatar#}
     <div class="row row-cols-2 ms-5 col-12 col-md-10">
     {{ form_row(form.avatar)}}
     {{ form_row(form.email)}}
     </div>
-
     {# Mot de passe #}
-
     <div class="row row-cols-2 ms-5 col-12 col-md-10">
     {{ form_row(form.plainPassword)}}
     </div>
-
     {# isVerified #}
-
     <div class="row row-cols-2 ms-5 col-12 col-md-10">
     {{ form_row(form.isVerified)}}
     </div>
-
     {# Button save#}
     <div class="row row-cols-2 ms-5 col-12 col-md-10 text-center">
     {{ form_row(form.save) }}

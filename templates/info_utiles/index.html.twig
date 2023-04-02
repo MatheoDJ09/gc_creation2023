@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Informations utiles{% endblock %}
+
+{% block body %}
+    <div class="container my-5 text-white">
+        <h1 class="text-center mb-5">Informations utiles</h1>
+        <div class="row">
+            <div class="col-md-6 mt-5">
+                <h5>Horaires d'été</h5>
+                <p>À partir du 15 juillet jusqu’au 1 septembre :</p>
+                <ul>
+                    <li>Mardi à samedi : 11h à 19h</li>
+                    <li>Dimanche et lundi : fermé</li>
+                </ul>
+                <br>
+                <h5>Paiement sécurisé</h5>
+                <p>
+                    Nous acceptons les cartes de crédit suivantes : PayPal, Apple Pay, Carte Bleue, Carte VISA, Mastercard, virement bancaire.
+                    <br><br>
+                    Les échanges sont cryptés et sécurisés par notre partenaire Mercanet, plateforme de la banque BNP PARIBAS.
+                    Nous ne stockons pas votre numéro de carte de crédit et n'avons pas accès à vos informations bancaires.
+                </p>
+                <br>
+                <h5>Livraison</h5>
+                    <ul>
+                    <li>Recuperation au Magasin</li>
+                    <li>Recommandé avec accusé de réception</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+            <img src="{{ asset('images/extra/boutique.jpg') }}" alt="boutique" class="img-fluid mb-3" style="height: 740px; width: 600px;">
+            </div>
+        </div>
+    </div>
+{% endblock %}

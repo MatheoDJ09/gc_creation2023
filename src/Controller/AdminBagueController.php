@@ -32,10 +32,10 @@ class AdminBagueController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $bague->setSlug($sluggerInterface->slug(\strtolower($bague->getTitle())));
             $bagueRepository->save($bague, true);
-            //--------------------------//
-            $bagues = ['bague 1', 'bague 2', 'bague 3'];
-            return $this->render('//templates/front_bague/index.html.twig', ['bagues' => $bagues]);
-            //--------------------------//
+            /* FLASH MESSAGE */
+// ====================================================== //
+$this->addFlash('success', 'Votre Bague a été Sauvegarder !');
+// ====================================================== //
             
             return $this->redirectToRoute('app_admin_bague_index', [], Response::HTTP_SEE_OTHER);
         }
@@ -62,6 +62,10 @@ class AdminBagueController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $bagueRepository->save($bague, true);
+            /* FLASH MESSAGE */
+// ====================================================== //
+$this->addFlash('success', 'Votre Bague a été Modifier !');
+// ====================================================== //
 
             return $this->redirectToRoute('app_admin_bague_index', [], Response::HTTP_SEE_OTHER);
         }
@@ -78,6 +82,10 @@ class AdminBagueController extends AbstractController
         if ($this->isCsrfTokenValid('delete'.$bague->getId(), $request->request->get('_token'))) {
             $bagueRepository->remove($bague, true);
         }
+            /* FLASH MESSAGE */
+// ====================================================== //
+        $this->addFlash('success', 'Votre Bague a été supprimer !');
+// ====================================================== //
 
         return $this->redirectToRoute('app_admin_bague_index', [], Response::HTTP_SEE_OTHER);
     }

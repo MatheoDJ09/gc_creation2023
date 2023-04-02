@@ -31,6 +31,10 @@ class AdminCollierController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $collierRepository->save($collier, true);
 
+            /* FLASH MESSAGE */
+// ====================================================== //
+$this->addFlash('success', 'Votre Bague a été Sauvegarder !');
+// ====================================================== //
             return $this->redirectToRoute('app_admin_collier_index', [], Response::HTTP_SEE_OTHER);
         }
 
@@ -57,6 +61,10 @@ class AdminCollierController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $collierRepository->save($collier, true);
 
+            /* FLASH MESSAGE */
+// ====================================================== //
+$this->addFlash('success', 'Votre Bague a été Modifier !');
+// ====================================================== //
             return $this->redirectToRoute('app_admin_collier_index', [], Response::HTTP_SEE_OTHER);
         }
 
@@ -72,7 +80,10 @@ class AdminCollierController extends AbstractController
         if ($this->isCsrfTokenValid('delete'.$collier->getId(), $request->request->get('_token'))) {
             $collierRepository->remove($collier, true);
         }
-
+            /* FLASH MESSAGE */
+// ====================================================== //
+$this->addFlash('success', 'Votre Bague a été supprimer !');
+// ====================================================== //
         return $this->redirectToRoute('app_admin_collier_index', [], Response::HTTP_SEE_OTHER);
     }
 }

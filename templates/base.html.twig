@@ -14,7 +14,8 @@
         {% block stylesheets %}{% endblock %}
         <link rel="stylesheet" href="{{ asset('css/styles.min.css')}}">
     </head>
-    <body>
+    <body> 
+        {# LOGO GC CREATION #}
         <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
             <div class="container-fluid">
                 <a class="navbar-brand" href="{{ path('app_front_home')}}" >
@@ -66,7 +67,7 @@
                         <div class="text-white">Bienvenue {{ app.user.email }}</div>
                         {# ROLE ADMIN  #}
                         {% if is_granted("ROLE_ADMIN") %}
-                        <a class="nav-link me-1" href="#" target="_blank">ADMIN</a>
+                        <a class="nav-link me-1" href="{{ path('app_admin_dashboard')}}" target="_blank">ADMIN</a>
                         {% endif %}
                         {# MON COMPTE ET DECONNEXION #}
                     <a class="btn btn-outline-warning me-1" href="{{ path('app_front_profil')}}">Mon Compte</a>
@@ -115,24 +116,23 @@
 
                 <!-- BRAND -->
                 <a class="navbar-brand" href="{{ path('app_front_home')}}" >
-                <img src="/public/images/logo.png" alt="logo" class="footer-brand img-fluid mb-2">
+                <img src="images/logo.png" alt="logo" class="pull-left"  class="footer-brand img-fluid mb-2">
                     <!-- TEXT -->
-                    <P class="text-white-700 mb-2">
-                    Copyright &copy; 2023 GC Creation. 
-                    
-                    </P>
                     <!-- SOCIAL -->
-                    <ul class="list-unstyled list-inline list-social mb-6 mb-md-0">
-                        <li class="list-inline-item list-social-item me-3">
-                            <a href="https://www.instagram.com/gc_creation/?hl=fr" class="list-inline-item list-social-item me-3">
-                            <img src="/public/images/social/instagram.png" class="list-social-icon">
-                            </a>
-                        </li>
-                        <li class="list-inline-item list-social-item me-3">
-                            <a href="https://www.facebook.com/gccreationparis/?locale=fr_FR" class="list-inline-item list-social-item me-3">
-                            <img src="/public/images/social/facebook.png" class="list-social-icon">
-                            </a>
-                        </li>
+                    <ul class="list-unstyled list-inline list-social mb-6 mb-md-0 text-white">
+                    <li class="list-inline-item list-social-item me-3 ">
+                    <a href="https://www.instagram.com/gc_creation/?hl=fr" class="list-inline-item list-social-item me-3">
+                    <img src="images/social/instagram.png" class="list-social-icon">
+                </a>
+            </li>
+            <li class="list-inline-item list-social-item me-3 text-white">
+            <a href="https://www.facebook.com/gccreationparis/?locale=fr_FR" class="list-inline-item list-social-item me-3">
+            <img src="images/social/facebook.png" class="list-social-icon">
+        </a>
+    </li>
+    <P class="text-white-700 mb-2">
+    Copyright &copy; 2023 GC Creation. 
+    </P>
                     </ul>
                     </div>
 <div class="col-3 col-md-4 col-lg-2">
@@ -162,13 +162,13 @@
         {# ABOUT US #}
         <ul class="list-unstyled text-muted mb-6 mb-md-8 mb-lg-0">
             <li class="mb-3 ">
-                <a href="#" class="text-reset">
+                <a href="{{ path('app_biography') }}" class="text-reset"> 
                     About Us
                 </a>
             </li>
             {# INFORMATIONS UTILES #}
             <li class="mb-3 ">
-                <a href="#" class="text-reset">
+                <a href="{{ path('app_info_utiles') }}" class="text-reset">
                     Informations Utiles
                 </a>
             </li>
@@ -194,31 +194,9 @@
                 </a>
             </li>
         </ul>
-
-
-
-
-
 </div></div></div></footer>
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        {#    <footer class="main_footer ptb_3 text-white">
-        <div class="footer_content container text_center">
-        <p>Copyright &copy; 2023 GC Creation. Tous droits réservés. 
-            <span class="contact_footer">Email: 
-        <a href="mailto: gccreation@hotmail.com">gccreation@hotmail.com</a> Tel: 
-    <a href="tel:+330144610950">+330144610950</a> </span></p>  #}
-{#     </div>
-</footer> #}
+
 
 </div> {# PAS TOUCHE #}
     <!-- JavaScript Bundle with Popper -->

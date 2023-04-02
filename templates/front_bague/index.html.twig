@@ -2,6 +2,7 @@
 
 {% block title %}
     Bagues
+    
 {% endblock %}
 
 {% block body %}
@@ -12,28 +13,25 @@
         Bagues
     </h1>
     {# CARDS BAGUES  #}
-    
     <div class="d-flex flex-wrap justify-content-center text-white">
-    {% for bague in bagues %}  
-    <div class="d-flex col-12 col-sm-12 col-md-6 col-lg-3 text-white m-2">  {# TEXTE - BUTTON CENTRÉ #}
-    <div class="card dark text-center bg-dark mb-3">  {# CARTE #}
-                <img src="{{ asset('images/bagues/' ~ bague.imageName)}}" class="img-fluid"  alt="leopard">
-                    <div class="card-body">
-                        <h5 class="card-title ">
-                            {{bague.title}}
-                        </h5>
-                    <button type="button" class="btn btn-outline-warning" id="voir-plus-1">Voir plus</button>
+        {% for bague in bagues %}
+            <div class="d-flex col-12 col-sm-12 col-md-6 col-lg-3 text-white m-2">
+                {# TEXTE - BUTTON CENTRÉ #}
+                <div class="card dark text-center bg-dark mb-3">
+                    {# CARTE #}
+                    <img src="{{ asset('images/bagues/' ~ bague.imageName) }}" class="img-fluid" alt="{{ bague.title }}">
+                        <div class="card-body">
+                            <h5 class="card-title ">
+                                {{ bague.title }}
+                            </h5>
+                            <button type="button" class="btn btn-outline-warning" id="voir-plus-1">
+                                Voir plus
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                </div>
-            </div>
-        {% endfor %}  
-    </div>
-
-
-    {% block javascripts %}
-    {{ parent() }}
-    <script src="{{ asset('js/product-detail-button.js') }}"></script> 
-{% endblock %}
-{% endblock %}
-
-                
+            {% endfor %}
+        </div>
+        {% block javascripts %}{% endblock %}
+    {% endblock %}
+    
